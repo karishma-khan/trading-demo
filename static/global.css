@@ -35,3 +35,54 @@ body{
 .terminalPage{
     font-weight: 100px;
 }
+
+input{
+    background-color: #24292e;
+    width: 100%;
+    height: 38px;
+    border-radius: 4px;
+    font-weight:100;
+  }
+  
+  .arrow{
+    position: absolute;
+    right: 9px;
+    top: 10px;
+  }
+  
+  .stockDataBox{
+    position:absolute;
+    background-color: #2e3134;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    max-height: 250px;
+    overflow: auto;
+  }
+  
+  .stockItem:hover{
+    background-color: #24292e;
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, table{
+    border: 1px solid #dddddd;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #18181a;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #1f1f21;
+  }

@@ -1,5 +1,6 @@
 <template>
     <div :style="ltp>50 ? 'color:green' : 'color:red'">
+        <i :class="ltp >50 ?'fa-solid fa-arrow-up': 'fa-solid fa-arrow-down'"></i>
             {{ ltp }}
     </div>
 </template>

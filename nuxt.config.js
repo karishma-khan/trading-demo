@@ -43,6 +43,7 @@ export default {
   plugins: [
     { src: "~/plugins/axios", ssr: true },
     { src: "~/plugins/websocket", ssr: true },
+    { src: "~/plugins/toast", ssr: true },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -15,6 +15,7 @@
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
+    "vue-toasted": "^1.1.28",
     "ws": "^8.16.0"
   },
   "devDependencies": {

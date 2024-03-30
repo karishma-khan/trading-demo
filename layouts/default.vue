@@ -5,7 +5,7 @@
         <common-sidenav></common-sidenav>
         <div class="grow">
           <common-top-nav></common-top-nav>
-          <div style="overflow: auto;">
+          <div style="overflow: auto;height: calc(80vh);">
             <Nuxt
               id="main"
             />
