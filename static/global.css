@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+    padding: 40px;
+    height: 100vh;
+}
+
+.main{
+    /* background-color: red; */
+    color: white;
+    border: 3px solid #282e34;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.sidenav{
+    border-right: 3px solid #282e34;
+    background-color: #1d2125;
+}
+
+.topnav{
+    border-bottom: 3px solid #282e34;
+    background-color: #1d2125;
+}
+
+.noStocks{
+    border: 2px dashed #282e34;
+    border-radius: 6px;
+    padding: 40px;
+    width: 70%;
+    text-align: center;
+}
+
+.terminalPage{
+    font-weight: 100px;
+}
