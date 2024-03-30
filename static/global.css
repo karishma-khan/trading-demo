@@ -86,3 +86,12 @@ input{
   tr:nth-child(odd) {
     background-color: #1f1f21;
   }
+
+  .mybtn{
+    border: 1px solid #00DC82;
+  }
+
+  .mybtn:disabled{
+    border: 1px solid #F3F3F4;
+    color: #F3F3F4;
+  }
