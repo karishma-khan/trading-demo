@@ -3,6 +3,9 @@
 ## Build Setup
 Add CORS extension from chrome to enable CORS request else you will face Network Error 
 
+node version = 18.17.1
+npm version = 9.6.7
+
 ```bash
 $ git clone git@github.com:karishma-khan/trading-demo.git
 $ cd trading-dashboard
