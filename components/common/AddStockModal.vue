@@ -1,5 +1,5 @@
 <template>
-    <div ref="modalContainer" class="py-10 md:py-0 absolute top-[50vh] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[95vw] md:w-[690px] h-auto rounded bg-[#282e34] text-center font-nunito text-white">
+    <div ref="modalContainer" class="py-0 absolute top-[50vh] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[95vw] md:w-[690px] h-auto rounded bg-[#282e34] text-center font-nunito text-white">
         <div class="text-right p-2">
             <i @click="$emit('close')" class="fa-solid fa-xmark cursor-pointer"></i>
         </div>

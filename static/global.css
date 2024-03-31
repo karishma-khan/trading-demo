@@ -66,9 +66,9 @@ input{
   }
   
   table {
+    overflow:auto;
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
   }
   
   th, table{
@@ -80,11 +80,11 @@ input{
     padding: 8px;
   }
   
-  tr:nth-child(even) {
+  .overall:nth-child(even), tr:nth-child(even) {
     background-color: #18181a;
   }
   
-  tr:nth-child(odd) {
+  .overall:nth-child(odd), tr:nth-child(odd) {
     background-color: #1f1f21;
   }
 

@@ -7,6 +7,10 @@ export const state = () => ({
     monthlyPerformance:null,
     absPerformance:[],
     percentagePerformance:[],
+    minPnl:0,
+    maxPnl:0,
+    maxDays:0,
+    minDays:0,
     error:''
   });
 
@@ -31,24 +35,42 @@ export const mutations = {
         let month ={}
         let pnl = 0
         let abs = []
+        let max = 0
+        let min = 0
+        let maxDays = 0
+        let minDays = 0
         for(let i =0; i< value?.timestamp.length;i++)
-            {
-                let currMonth = new Date(value?.timestamp[i])
-                currMonth = currMonth.getMonth()
-                pnl += value?.pnl[i]
-                console.log('uff',value?.pnl[i]);
-                abs.push(value?.pnl[i])
-                if(!(currMonth in month))
-                    month[currMonth] = 0
-                month[currMonth] = month[currMonth] + value?.pnl[i]
-                // console.log(performanceData.pnl[i],month[currMonth],parseInt(month[currMonth])+parseInt(performanceData.pnl[i]));
-            }
-            console.log(month);
-            console.log('frpm muta',abs);
+        {
+            let currMonth = new Date(value?.timestamp[i])
+            currMonth = currMonth.getMonth()
+            pnl += value?.pnl[i]
+            console.log('uff',value?.pnl[i]);
+            abs.push(value?.pnl[i])
+            if(!(currMonth in month))
+                month[currMonth] = 0
+            if(value?.pnl[i] > max)
+                max = value?.pnl[i]
+
+            if(value?.pnl[i] < min)
+                min = value?.pnl[i]
+
+            if(value?.pnl[i] <= 0)
+                minDays++
+
+            if(value?.pnl[i] > 0)
+                maxDays++
+            month[currMonth] = month[currMonth] + value?.pnl[i]
+            // console.log(performanceData.pnl[i],month[currMonth],parseInt(month[currMonth])+parseInt(performanceData.pnl[i]));
+        }
+        console.log(month);
         state.performance = value
         state.monthlyPerformance = month
         state.absPerformance = abs
         state.netPnl = pnl
+        state.minPnl= min
+        state.maxPnl= max
+        state.maxDays= maxDays
+        state.minDays= minDays
     },
     set_percentage_performace(state)
     {
@@ -113,4 +135,9 @@ export const getters = {
     getNetPnl: (state) => state.netPnl,
     getPercentagePerformance: (state) => state.percentagePerformance,
     getError: (state) => state.error,
+    getMinPnl: (state) => state.minPnl,
+    getMaxPnl: (state) => state.maxPnl,
+    getMinDays: (state) => state.minDays,
+    getMaxDays: (state) => state.maxDays,
+    
 };

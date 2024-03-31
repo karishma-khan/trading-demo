@@ -10,20 +10,8 @@
         <div class="mt-12 text-xl">
             Month Wise Breakup
         </div>
-        <table style="width: 100%;" class="table-auto mt-4">
-        <tr>
-          <th>Year</th>
-          <th v-for="item,idx in months" :key="idx">{{ item }}</th>
-        </tr>
-        
-        <tr>
-          <td>2023</td>
-          <td class="text-[#00DC82]" v-for="item,idx in perMonthData" :key="idx">
-            {{ Math.floor(item) }}
-          </td>
-          <td class="text-[#00DC82]">{{ Math.floor(totalPnl) }}</td>
-        </tr>
-      </table>
+        <performance-table :months="months" :totalPnl="totalPnl" :perMonthData="perMonthData"></performance-table>
+      <overall-performance></overall-performance>
     </div>
 </template>
 <script>
@@ -41,7 +29,7 @@ export default {
             totalPnl: 'getNetPnl',
             performanceData:'getPerformance',
             perMonthData:'getMonthlyPerfomance',
-            absData:'getAbsolutePerformance'
+            absData:'getAbsolutePerformance',
         })
     },
     methods:{

@@ -5,7 +5,7 @@
         <common-sidenav v-if="!isMobile"></common-sidenav>
         <div class="grow">
           <common-top-nav :isMobile="isMobile"></common-top-nav>
-          <div style="overflow: auto;height: calc(80vh);">
+          <div style="overflow: auto;height: calc(80vh);" :style="isMobile ? 'width:82vw' : ''">
             <Nuxt
               id="main"
             />

@@ -19,8 +19,9 @@
     </div>
     <div v-if="watchlist.length != 0">
       <candle-stick-chart v-if="chartReady" :stock="selectedStock!=undefined?selectedStock:watchlist[0]"></candle-stick-chart>
-      <div v-else class="h-[821px] flex justify-between items-center"> ...Loading</div>
-      <div :style="!selectedStock ? '' : 'visibility: hidden;'">{{ watchlist[0] }} stock is selected by default. Select stock from watchlist for preview.</div>
+      <div v-else class=" h-[409px] md:h-[821px] flex md:w-full justify-between items-center">
+        <div class="grow text-center">...Loading</div></div>
+      <div v-if="chartReady" :style="!selectedStock ? '' : 'visibility: hidden;'">{{ watchlist[0] }} stock is selected by default. Select stock from watchlist for preview.</div>
       <table style="width: 100%;" class="table-auto mt-12">
         <tr>
           <th>Asset</th>
@@ -86,13 +87,13 @@ export default {
     },
     async addToWatchlist(val)
     {
+      this.searchStocksText = ''
       await this.$store.dispatch('addWatchlistStock',val)
       if(!this.selectedStock && !this.chartReady)
       {
         await this.$store.dispatch('getStockData',this.watchlist[0])
         this.chartReady = true
       }
-      this.searchStocksText = ''
     },
     removeFromWatchlist(val)
     {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="container"></div>
+        <div id="container" style="width: 100%;"></div>
     </div>
   </template>
   
@@ -22,7 +22,6 @@ computed:{
 },
 methods:{
     configureChart(){
-        // console.log('data perf',this.dataToPlot);
         Highcharts.chart('container', {
             chart: {
                 backgroundColor: 'black' // Set background color to black
@@ -32,12 +31,14 @@ methods:{
             },
             yAxis: {
                 title: {
-                    text: 'Number of Employees'
+                    text:null
                 }
             },
 
             xAxis: {
-                visible: false // Set xAxis visibility to false
+                title: {
+                    text:null
+                }
             },
 
 
@@ -67,7 +68,7 @@ methods:{
             responsive: {
                 rules: [{
                     condition: {
-                        maxWidth: 500
+                        minWidth: 350
                     },
                     chartOptions: {
                         legend: {
