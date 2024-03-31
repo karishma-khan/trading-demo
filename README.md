@@ -1,7 +1,7 @@
 # trading-dashboard
 
 ## Build Setup
-
+Add CORS extension from chrome 
 ```bash
 # install dependencies
 $ npm install
