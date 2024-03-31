@@ -5,10 +5,12 @@ Add CORS extension from chrome to enable CORS request else you will face Network
 
 ```bash
 $ git clone git@github.com:karishma-khan/trading-demo.git
+$ cd trading-dashboard
+
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at ( For developer use )
 $ npm run dev
 
 # build for production and launch server
