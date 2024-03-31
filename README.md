@@ -4,6 +4,7 @@
 Add CORS extension from chrome to enable CORS request else you will face Network Error 
 
 ```bash
+$ git clone git@github.com:karishma-khan/trading-demo.git
 # install dependencies
 $ npm install
 
