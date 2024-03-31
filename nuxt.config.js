@@ -20,7 +20,15 @@ export default {
       {
         src: 'https://code.highcharts.com/stock/modules/accessibility.js',
         body: true
-      }
+      },
+      {
+        src: 'https://code.highcharts.com/modules/export-data.js',
+        body: true
+      },
+      {
+        src: 'https://code.highcharts.com/modules/series-label.js',
+        body: true
+      },
     ],
     meta: [
       { charset: 'utf-8' },

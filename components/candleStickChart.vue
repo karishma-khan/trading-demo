@@ -70,13 +70,11 @@ methods:{
     }
 },
 async updated(){
-    await this.$store.dispatch('getStockData',this.stock)
     await this.processData()
     this.configureChart()
 },
 
 async mounted() {
-    await this.$store.dispatch('getStockData',this.stock)
     await this.processData()
     this.configureChart()
 }
