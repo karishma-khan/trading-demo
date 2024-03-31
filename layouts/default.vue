@@ -5,7 +5,7 @@
         <common-sidenav v-if="!isMobile"></common-sidenav>
         <div class="grow">
           <common-top-nav :isMobile="isMobile"></common-top-nav>
-          <div style="overflow: auto;height: calc(80vh);" :style="isMobile ? 'width:82vw' : ''">
+          <div style="overflow: auto;height: 80vh;" :style="isMobile ? smaller? 'width:82vw' : 'width:90vw' : ''">
             <Nuxt
               id="main"
             />
@@ -22,7 +22,8 @@ export default {
   data()
   {
     return{
-      isMobile:false
+      isMobile:false,
+      smaller:false,
     }
   },
   computed:{
@@ -42,6 +43,7 @@ export default {
   methods:{
     checkScreenSize(){
       this.isMobile = window.innerWidth < 1028;
+      this.smaller = window.innerWidth < 870
     }
   },
   mounted() {

@@ -1,5 +1,5 @@
 <template>
-    <table class="table-auto mt-4 block">
+    <table style="width: 100%;" class="table-auto mt-4 block sm:table">
         <tr>
           <th>Year</th>
           <th v-for="item,idx in months" :key="idx">{{ item }}</th>
