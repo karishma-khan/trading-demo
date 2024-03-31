@@ -96,3 +96,8 @@ input{
     border: 1px solid #F3F3F4;
     color: #F3F3F4;
   }
+
+  .toasted-error{
+    color: red;
+    background-color: #24292e;
+  }

@@ -6,10 +6,14 @@ export const state = () => ({
     netPnl:null,
     monthlyPerformance:null,
     absPerformance:[],
-    percentagePerformance:[]
+    percentagePerformance:[],
+    error:''
   });
 
 export const mutations = {
+    set_error(state,value){
+        state.error = value
+    },
     set_stocks(state, value) {
         state.stocks = value.symbols;
     },
@@ -65,6 +69,7 @@ export const actions = {
             commit("set_stocks",(resp.data))
         } catch (error) {
             console.log(error);
+            commit("set_error",error)
         }
     },
     async getStockData({commit}, stock){
@@ -73,6 +78,7 @@ export const actions = {
             commit("set_stock_data",(resp.data))
         } catch (error) {
             console.log(error);
+            commit("set_error",error)
         }
     },
     async addWatchlistStock({commit},payload)
@@ -92,6 +98,7 @@ export const actions = {
             commit("set_percentage_performace")
         } catch (error) {
             console.log(error);
+            commit("set_error",error)
         }
     }
 }
@@ -104,5 +111,6 @@ export const getters = {
     getMonthlyPerfomance: (state) => state.monthlyPerformance,
     getAbsolutePerformance: (state) => state.absPerformance,
     getNetPnl: (state) => state.netPnl,
-    getPercentagePerformance: (state) => state.percentagePerformance
+    getPercentagePerformance: (state) => state.percentagePerformance,
+    getError: (state) => state.error,
 };

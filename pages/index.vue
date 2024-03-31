@@ -19,6 +19,7 @@
     </div>
     <div v-if="watchlist.length != 0">
       <candle-stick-chart v-if="chartReady" :stock="selectedStock!=undefined?selectedStock:watchlist[0]"></candle-stick-chart>
+      <div v-else class="h-[821px] flex justify-between items-center"> ...Loading</div>
       <div :style="!selectedStock ? '' : 'visibility: hidden;'">{{ watchlist[0] }} stock is selected by default. Select stock from watchlist for preview.</div>
       <table style="width: 100%;" class="table-auto mt-12">
         <tr>

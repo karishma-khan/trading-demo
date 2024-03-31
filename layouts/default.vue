@@ -17,11 +17,26 @@
   </v-app>
 </template>
 <script>
+import {mapGetters} from 'vuex'
 export default {
   data()
   {
     return{
       isMobile:false
+    }
+  },
+  computed:{
+    ...mapGetters({
+      error: 'getError'
+    })
+  },
+  watch:{
+    error()
+    {
+      this.$toasted.show(this.error, {
+                duration: 2000 ,
+                theme: 'toasted-error'
+            })
     }
   },
   methods:{
@@ -31,7 +46,7 @@ export default {
   },
   mounted() {
     this.checkScreenSize();
-        window.addEventListener('resize', this.checkScreenSize);
+    window.addEventListener('resize', this.checkScreenSize);
   },
 
 };
